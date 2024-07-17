@@ -1,18 +1,21 @@
-import java.util.Scanner
+package chapter1
 
-fun main(args: Array<String>) {
+fun main() {
 
     // Immutable variable declaration
     val height = 60
+    println(height)
 
     // Mutable variable declaration
     var size = 5
     size = 4
+    println(size)
 
     // You can define a variable and give it a type
     // then assign it later in the code
     var score: Int
     score = 10
+    println(score)
 
     // Optional values can be take a null value
     var car: Car? = null
@@ -25,8 +28,7 @@ fun main(args: Array<String>) {
     car?.drive()
 
     // The elvis operator will run here in case the value of car is null
-    val immutableCar: Car = car ?: Car("Porche")
-
+    val immutableCar: Car = car ?: Car("Porsche")
 
     // The null assertion operator !! will enable you to make forced
     // calls on optional values
@@ -111,7 +113,7 @@ fun printMax(c: Int, d: Int) {
     println(maxValue)
 }
 
-// Non Generic class
+// Non-Generic class
 class Box {
     var content: Any? = null
     fun put(content: Any?) {
@@ -171,8 +173,8 @@ fun printCar2(car: Car?) {
 // "transformational" because the object they return can be different
 // from the object you call the function on
 
-// also: the also function returns the original object. also uses it to
-// refer to the object inside of the block and has access to the outer
+// also: the "also" function returns the original object. also uses it to
+// refer to the object inside the block and has access to the outer
 // scope using this
 fun printCar3(car: Car?) {
     car?.also {
@@ -184,7 +186,7 @@ fun printCar3(car: Car?) {
     }
 }
 
-// apply:It’s an also that is isolated like a run. It returns the same
+// apply: It’s an "also" that is isolated like a run. It returns the same
 // object as the target, and it uses this inside the block
 fun printCar4(car: Car?) {
     car?.apply {
@@ -205,7 +207,7 @@ fun testingTODOs() {
 
 data class Car(
     val brand: String,
-    var doors: Int
+    var doors: Int = 4
 ) {
     fun drive() {
         println("driving")
